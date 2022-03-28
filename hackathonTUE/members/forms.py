@@ -1,0 +1,18 @@
+from django.contrib.auth.forms import UserChangeForm, UserCreationForm, PasswordChangeForm
+from django.contrib.auth.models import User
+from django import forms
+
+class SignUpForm(UserCreationForm):
+    email = forms.EmailField(widget=forms.EmailInput(attrs={'class':'block border border-grey-light w-full p-3 rounded mb-4'}))
+    first_name = forms.CharField(max_length=255, widget=forms.TextInput(attrs={'class':'block border border-grey-light w-full p-3 rounded mb-4'}))
+    last_name = forms.CharField(max_length=255, widget=forms.TextInput(attrs={'class':'block border border-grey-light w-full p-3 rounded mb-4'}))
+    
+    class Meta:
+        model = User
+        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2')
+        
+    def __init__(self, *args, **kwargs):
+        super(SignUpForm, self).__init__(*args, **kwargs)
+        self.fields['username'].widget.attrs['class'] = 'block border border-grey-light w-full p-3 rounded mb-4'
+        self.fields['password1'].widget.attrs['class'] = 'block border border-grey-light w-full p-3 rounded mb-4'
+        self.fields['password2'].widget.attrs['class'] = 'block border border-grey-light w-full p-3 rounded mb-4'

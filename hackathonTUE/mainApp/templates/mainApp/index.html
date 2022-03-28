@@ -1,0 +1,84 @@
+{% extends '../base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block context %}
+<style>
+  .typed-out {
+    border-right: solid 3px rgba(0,255,0,.75);
+    white-space: nowrap;
+    overflow: hidden;    
+    /* font-family: 'Source Code Pro', monospace;   */
+    font-size: 28px;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 0 auto;
+  }
+  
+  /* Animation */
+  .typed-out {
+    animation: animated-text 5s steps(90,end) 1s normal both,
+               animated-cursor 600ms steps(29,end) infinite;
+  }
+  
+  /* text animation */
+  
+  @keyframes animated-text{
+    from{width: 0%;}
+    to{width: 700px;}
+  }
+  
+  /* cursor animations */
+  
+  @keyframes animated-cursor{
+    from{border-right-color: rgba(0,255,0,.75);}
+    to{border-right-color: transparent;}
+  }
+</style>
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-20 ">
+        <h2 class="text-xs text-purple-500 tracking-widest font-medium title-font mb-1">SAVING YOU FROM DRUGS</h2>
+        <span class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 typed-out con">Here's what you can do in our website......</span>
+      </div>
+      <div class="flex flex-wrap">
+        <div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+          <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">Know more!</h2>
+          <p class="leading-relaxed text-base mb-4">You can read about the types of drugs which are safe and which are prohibited be a sports person.</p>
+          <a class="text-purple-500 inline-flex items-center transform transition-all hover:scale-125" href="{% url 'about' %}">Learn More
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+        <div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+          <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">Give Feedback!</h2>
+          <p class="leading-relaxed text-base mb-4">You can give us a feed back if you like or disliked our content by loging in the site.</p>
+          <a class="text-purple-500 inline-flex items-center" href="{% url 'feedback' %}">Learn More
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+        <div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+          <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">Sign Up</h2>
+          <p class="leading-relaxed text-base mb-4">Be signing up in our website you will be having the chance to contribute in our website.</p>
+          <a class="text-purple-500 inline-flex items-center" href="{% url 'signup' %}">Learn More
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+        <div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+          <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2 ">Contact Us</h2>
+          <p class="leading-relaxed text-base mb-4">Having problems using our website? Do contact us any time any where.</p>
+          <a class="text-purple-500 inline-flex items-center">Learn More
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      {% comment %} <a class="inline-flex items-center h-8 px-4 m-2 text-sm text-purple-100 transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800 mx-auto" href="{% url 'signup' %}">Sign Up</a> {% endcomment %}
+    </div>
+  </section>
+{% endblock context %}

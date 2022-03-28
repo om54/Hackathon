@@ -1,0 +1,23 @@
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.typed-out {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 1s steps(180, end) infinite;
+  font-size: 1.6rem;/* not here */
+  width: 0;
+}
+/* not here */
+.con{
+	display: inline-block;
+}
+
+html{
+  scroll-behavior: smooth;
+}

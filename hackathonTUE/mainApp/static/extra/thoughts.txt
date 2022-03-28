@@ -1,0 +1,9 @@
+Name: SavePlayers
+Content:
+0. login and signup
+1. about
+2. contact
+3. donate
+4. feed back
+5. news feed
+6. blog post with comment
