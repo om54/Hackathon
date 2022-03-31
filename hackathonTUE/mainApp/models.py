@@ -8,6 +8,8 @@ class newsFeed(models.Model):
 	title = models.CharField(max_length=255)
 	desc = models.TextField()
 	date = models.DateField()
+	outDesc = models.TextField()
+
 	def __str__(self):
         	return self.title + ' | ' + str(self.user)
 
